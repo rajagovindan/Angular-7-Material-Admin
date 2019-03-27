@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-4" style="margin:10px 0" *ngFor="let user of users let i = index" >
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{user.FirstName}}</mat-card-title>
+        <mat-card-subtitle>{{user.LastName}}</mat-card-subtitle>
+      </mat-card-header>
+      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <mat-card-content>
+        <p>
+          <strong>company : </strong>{{user.company}}
+        </p>
+        <p><strong>Address : </strong>{{user.Address}}</p>
+        <p><strong>Phone:</strong>{{user.Phone}}</p>
+        <p><strong>Email:</strong>{{user.Email}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="OnEdit(i)" color="primary">Edit</button>
+        <button mat-button (click)="OnDelete(i)" color="warn">Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

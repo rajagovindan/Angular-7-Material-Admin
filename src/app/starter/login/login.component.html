@@ -1,0 +1,19 @@
+<div class="login-container">
+      <form #heroForm="ngForm" (ngSubmit)="login()">
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput type="email" required name="email" [(ngModel)]="userData.email" placeholder="Username">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="userData.password" required name="password" placeholder="Password"
+              [type]="hide ? 'text' : 'password'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <button mat-raised-button color="primary" [disabled]="heroForm.form.invalid">Login</button>
+        </div>
+      </form>
+</div>

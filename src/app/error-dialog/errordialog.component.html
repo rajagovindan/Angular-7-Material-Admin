@@ -1,0 +1,16 @@
+<div>
+    <div>
+        <p>
+            Reason: {{data.reason}}
+        </p>
+        <p>
+            Status: {{data.status}}
+        </p>
+    </div>
+    <div mat-dialog-actions>
+        <ng-content select="[card-body]">
+
+        </ng-content>
+        <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+    </div>
+</div>
